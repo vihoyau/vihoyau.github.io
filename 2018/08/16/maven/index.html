@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,ide," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,21 +79,19 @@
 
 
 
-<meta name="description" content="如何使用idea">
-<meta name="keywords" content="java,ide">
+<meta name="description" content="maven 学习总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="how to use idea">
-<meta property="og:url" content="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/index.html">
+<meta property="og:title" content="maven">
+<meta property="og:url" content="https://github.com/vihoyau/qiuweihao.git/2018/08/16/maven/index.html">
 <meta property="og:site_name" content="开源技术栈">
-<meta property="og:description" content="如何使用idea">
+<meta property="og:description" content="maven 学习总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/idea.jpg">
-<meta property="og:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/idea2.png">
-<meta property="og:updated_time" content="2018-08-15T06:10:30.000Z">
+<meta property="og:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/16/maven/mvn.jpg">
+<meta property="og:updated_time" content="2018-08-16T07:03:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="how to use idea">
-<meta name="twitter:description" content="如何使用idea">
-<meta name="twitter:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/idea.jpg">
+<meta name="twitter:title" content="maven">
+<meta name="twitter:description" content="maven 学习总结">
+<meta name="twitter:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/16/maven/mvn.jpg">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/"/>
+  <link rel="canonical" href="https://github.com/vihoyau/qiuweihao.git/2018/08/16/maven/"/>
 
 
 
 
 
-  <title>how to use idea | 开源技术栈</title>
+  <title>maven | 开源技术栈</title>
   
 
 
@@ -237,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/vihoyau/qiuweihao.git/2018/08/15/how-to-use-idea/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/vihoyau/qiuweihao.git/2018/08/16/maven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="邱伟豪">
@@ -254,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">how to use idea</h1>
+          <h1 class="post-title" itemprop="name headline">maven</h1>
         
 
         <div class="post-meta">
@@ -266,8 +264,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T10:37:48+08:00">
-                2018-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T10:12:53+08:00">
+                2018-08-16
               </time>
             
 
@@ -306,18 +304,34 @@
       
 
       
-        <h1 id="如何使用idea"><a href="#如何使用idea" class="headerlink" title="如何使用idea"></a>如何使用idea</h1><a id="more"></a>
-<p>昨天下载一个idea for osx 然后破解。接着是导入项目，导入半天总感觉不对，<br>同事从eclipse for windows 中导出的代码，拿过来idea是需要指定eclipse类型才能导入的。<br>下面说说idea和eclipse中的区别。于是看看别的网友怎么说，全是牛头不搭马嘴。</p>
-<h2 id="接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。"><a href="#接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。" class="headerlink" title="接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。"></a>接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。</h2><ul>
-<li><p>首先破解：<br> 下载破解包<br> 进入<a href="http://idea.lanyus.com" target="_blank" rel="noopener">http://idea.lanyus.com</a><br> 下载JetbrainsCrack-2.8-release-enc.jar（其中2.8代表版本号，请下载网站中提供的最新版本包）。<br> 把破解包放到对应的目录下。如下：<br> <img src="idea.jpg" alt=""><br>  找不到如何打开上图吗？点击你的程序目录显示内容<br><img src="idea2.png" alt=""><br>通过上面的idea.vmoptions文件，引用这个破解包</p>
-</li>
-<li><p>破解码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">K71U8DBPNE-eyJsaWNlbnNlSWQiOiJLNzFVOERCUE5FIiwibGljZW5zZWVOYW1lIjoibGFuIHl1IiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiR08iLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJQUyIsInBhaWRVcFRvIjoiMjAxOS0wNS0wNCJ9LHsiY29kZSI6IkNMIiwicGFpZFVwVG8iOiIyMDE5LTA1LTA0In0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifSx7ImNvZGUiOiJSU1UiLCJwYWlkVXBUbyI6IjIwMTktMDUtMDQifV0sImhhc2giOiI4OTA4Mjg5LzAiLCJncmFjZVBlcmlvZERheXMiOjAsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-Owt3/+LdCpedvF0eQ8635yYt0+ZLtCfIHOKzSrx5hBtbKGYRPFDrdgQAK6lJjexl2emLBcUq729K1+ukY9Js0nx1NH09l9Rw4c7k9wUksLl6RWx7Hcdcma1AHolfSp79NynSMZzQQLFohNyjD+dXfXM5GYd2OTHya0zYjTNMmAJuuRsapJMP9F1z7UTpMpLMxS/JaCWdyX6qIs+funJdPF7bjzYAQBvtbz+<span class="number">6</span>SANBgN36gG1B2xHhccTn6WE8vagwwSNuM70egpahcTktoHxI7uS1JGN9gKAr6nbp+<span class="number">8</span>DbFz3a2wd+XoF3nSJb/d2f/<span class="number">6</span>zJR8yJF8AOyb30kwg3zf5cWw==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/<span class="number">5</span>oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/<span class="number">78</span>TmVqFl8nOeD5+<span class="number">07B</span>8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/<span class="number">8</span>vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+<span class="number">0</span>gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+<span class="number">2</span>yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++<span class="number">2</span>+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==</span><br></pre></td></tr></table></figure>
+        <h1 id="maven-学习总结"><a href="#maven-学习总结" class="headerlink" title="maven 学习总结"></a>maven 学习总结</h1><a id="more"></a>
+<h2 id="maven-是什么？"><a href="#maven-是什么？" class="headerlink" title="maven 是什么？"></a>maven 是什么？</h2><p>   maven主要是用来做项目管理的。</p>
+<ul>
+<li>maven能管啥？<br>  Builds、Documentation、Reporting、Dependencies、SCMs、Releases、Distribution</li>
+<li>如何配置maven？<br>首先我们创建一个文件夹，maven，再执行以下命令<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mvn -B archetype:generate \</span><br><span class="line">  -DarchetypeGroupId=org.apache.maven.archetypes \</span><br><span class="line">  -DgroupId=com.mycompany.app \</span><br><span class="line">  -DartifactId=my-app</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>破解去到你的idea对应的register选项中进行注册。</p>
-<h2 id="还是不行吗？使用前破解码之前请将“0-0-0-0-account-jetbrains-com”添加到hosts文件中"><a href="#还是不行吗？使用前破解码之前请将“0-0-0-0-account-jetbrains-com”添加到hosts文件中" class="headerlink" title="还是不行吗？使用前破解码之前请将“0.0.0.0 account.jetbrains.com”添加到hosts文件中"></a>还是不行吗？使用前破解码之前请将“0.0.0.0 account.jetbrains.com”添加到hosts文件中</h2><h1 id="好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。"><a href="#好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。" class="headerlink" title="好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。"></a>好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。</h1><p>我决定了，不用这个垃圾工具。还是别搞了。我还是觉得用eclipse好点。这个idea的界面也太丑了点吧。</p>
-<h1 id="放弃了。"><a href="#放弃了。" class="headerlink" title="放弃了。"></a>放弃了。</h1>
+<p>然后可以看到有个pom.xml文件，内容如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span><br><span class="line">  xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">  xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0</span></span><br><span class="line"><span class="string">                      http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">  &lt;modelVersion&gt;<span class="number">4.0</span><span class="number">.0</span>&lt;/modelVersion&gt;</span><br><span class="line">  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;my-app&lt;/artifactId&gt;</span><br><span class="line">  &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">  &lt;version&gt;<span class="number">1.0</span>-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;name&gt;Maven Quick Start Archetype&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;http:<span class="comment">//maven.apache.org&lt;/url&gt;</span></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;<span class="number">4.11</span>&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<p>说明以下这个xml的含义吧。<br>project 所有的顶级元素。modelVersion 模型版本，几乎不动。groupId 项目唯一标识。artifactId 主工件名称。packaging 使用的包类型jar，war。version 工件版本。name 显示项目名称。url 定位找到项目站点位置。description 项目描述。</p>
+<ul>
+<li><p>编译生成target文件</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试，这时候会安装很多依赖</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn test</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn test-compile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成一个jar包,生成位置在target中my-app-1.0-SNAPSHOT.jar</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这时候安装一下。安装目录在${user.home}/.m2/repository 最后在这个目录下很多其他包，找到了我们命名为junit的文件夹。如图<br><img src="mvn.jpg" alt=""></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有很多Maven插件可以开箱即用.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn site</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     
@@ -362,14 +376,6 @@
     <footer class="post-footer">
     
       
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/ide/" rel="tag"># ide</a>
-          
-        </div>
-      
 
       
       
@@ -379,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/14/include-java-base/" rel="next" title="java collection">
-                <i class="fa fa-chevron-left"></i> java collection
+              <a href="/2018/08/15/how-to-study-java/" rel="next" title="how to study java">
+                <i class="fa fa-chevron-left"></i> how to study java
               </a>
             
           </div>
@@ -388,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/15/how-to-study-java/" rel="prev" title="how to study java">
-                how to study java <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用idea"><span class="nav-number">1.</span> <span class="nav-text">如何使用idea</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。"><span class="nav-number">1.1.</span> <span class="nav-text">接下来，我以一个初用者的角度讲解一下这个工具到底怎么使用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还是不行吗？使用前破解码之前请将“0-0-0-0-account-jetbrains-com”添加到hosts文件中"><span class="nav-number">1.2.</span> <span class="nav-text">还是不行吗？使用前破解码之前请将“0.0.0.0 account.jetbrains.com”添加到hosts文件中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。"><span class="nav-number">2.</span> <span class="nav-text">好了，破解的网上也一堆，我就不多说了。现在教大家如何使用这个工具吧。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#放弃了。"><span class="nav-number">3.</span> <span class="nav-text">放弃了。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven-学习总结"><span class="nav-number">1.</span> <span class="nav-text">maven 学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#maven-是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">maven 是什么？</span></a></li></ol></li></ol></div>
             
 
           </div>
