@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="搭建一个node-koa2全栈开发环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="koa-bootstrap--numjacks">
+<meta property="og:url" content="https://github.com/vihoyau/qiuweihao.git/2018/08/19/koa-bootstrap-numjacks/index.html">
+<meta property="og:site_name" content="开源技术栈">
+<meta property="og:description" content="搭建一个node-koa2全栈开发环境。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/19/koa-bootstrap-numjacks/koa.png">
+<meta property="og:updated_time" content="2018-08-19T02:26:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="koa-bootstrap--numjacks">
+<meta name="twitter:description" content="搭建一个node-koa2全栈开发环境。">
+<meta name="twitter:image" content="https://github.com/vihoyau/qiuweihao.git/2018/08/19/koa-bootstrap-numjacks/koa.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/vihoyau/qiuweihao.git/2018/08/19/koa-bootstrap-numjacks/"/>
+
+
+
+
+
+  <title>koa-bootstrap--numjacks | 开源技术栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开源技术栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">技术分享</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/vihoyau/qiuweihao.git/2018/08/19/koa-bootstrap-numjacks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邱伟豪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开源技术栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">koa-bootstrap--numjacks</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T09:24:03+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+            
+
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>搭建一个node-koa2全栈开发环境。<br><a id="more"></a><br>koa1.0 koa2.0 express 区别在哪？<br>koa1.0 generator可以把异步代码写成同步的样子。es6<br>koa2.0 promise和async解决异步。es7</p>
+<h1 id="入门：基本的koa使用"><a href="#入门：基本的koa使用" class="headerlink" title="入门：基本的koa使用"></a>入门：基本的koa使用</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入koa，和koa 1.x不同，在koa2中，我们导入的是一个class，因此用大写的Koa表示:</span></span><br><span class="line">const Koa = require('koa');</span><br><span class="line"><span class="comment">// 创建一个Koa对象表示web app本身:</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="comment">// 对于任何请求，app将调用该异步函数处理请求：</span></span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    await next();</span><br><span class="line">    ctx.response.type = 'text/html';</span><br><span class="line">    ctx.response.body = '&lt;h1&gt;Hello, koa2!&lt;/h1&gt;';</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 在端口3000监听:</span></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line">console.log('app started at port 3000...');</span><br></pre></td></tr></table></figure>
+<p>很简单。就是ctx中间件封装了request和response模块。</p>
+<h1 id="处理URL"><a href="#处理URL" class="headerlink" title="处理URL"></a>处理URL</h1><p>假如我们要调用不同的接口，返回不同的内容。koa如何才能做这样的拦截。<br>很简单。就是request模块中有path。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx.request.path === <span class="string">'/'</span>) &#123;</span><br><span class="line">        ctx.response.body = 'index page';</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        await next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    if (ctx.request.path === '/test') &#123;</span><br><span class="line">        ctx.response.body = 'TEST page';</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        await next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    if (ctx.request.path === '/error') &#123;</span><br><span class="line">        ctx.response.body = 'ERROR page';</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        await next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样写感觉代码太过于复杂。</p>
+<h1 id="引入koa-router"><a href="#引入koa-router" class="headerlink" title="引入koa-router"></a>引入koa-router</h1><p>利用中间间处理url映射。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const Koa = require('koa');</span><br><span class="line"><span class="comment">// 注意require('koa-router')返回的是函数:</span></span><br><span class="line">const router = require('koa-router')();</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="comment">// log request URL:</span></span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(`Process $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;...`);</span><br><span class="line">    await next();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// add url-route:</span></span><br><span class="line">router.get('/hello/:name', async (ctx, next) =&gt; &#123;</span><br><span class="line">    var name = ctx.params.name;</span><br><span class="line">    ctx.response.body = `&lt;h1&gt;Hello, $&#123;name&#125;!&lt;/h1&gt;`;</span><br><span class="line">&#125;);</span><br><span class="line">router.get(<span class="string">'/'</span>, async (ctx, next) =&gt; &#123;</span><br><span class="line">    ctx.response.body = '&lt;h1&gt;Index&lt;/h1&gt;';</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// add router middleware:</span></span><br><span class="line">app.use(router.routes());</span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line">console.log('app started at port 3000...');</span><br></pre></td></tr></table></figure></p>
+<p>这样写好多了。<br><img src="koa.png" alt=""><br>但是这样写几乎框架没有可用性。越写越复杂化。<br>因为没有人会想在写完一个模块的时候，第二天找不到这个文件在哪了，更不说假如二次开发会带来什么后果。<br>所有的URL处理函数都放到app.js里显得很乱，而且，每加一个URL，就需要修改app.js。随着URL越来越多，app.js就会越来越长。<br>为了解决耦合度，必须通过解耦合的方式来处理。<br>于是，我们分层。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">url2-koa/</span><br><span class="line">|</span><br><span class="line">+- .vscode/</span><br><span class="line">|  |</span><br><span class="line">|  +- launch.json &lt;-- VSCode 配置文件</span><br><span class="line">|</span><br><span class="line">+- controllers/</span><br><span class="line">|  |</span><br><span class="line">|  +- login.js &lt;-- 处理login相关URL</span><br><span class="line">|  |</span><br><span class="line">|  +- users.js &lt;-- 处理用户管理相关URL</span><br><span class="line">|</span><br><span class="line">+- app.js &lt;-- 使用koa的js</span><br><span class="line">|</span><br><span class="line">+- package.json &lt;-- 项目描述文件</span><br><span class="line">|</span><br><span class="line">+- node_modules/ &lt;-- npm安装的所有依赖包</span><br></pre></td></tr></table></figure></p>
+<p>我们把app作为一个加载所有资源的文件。把他加载到koa框架中去。只要这个进程存在，用户访问时的路径就会被拦截下来。</p>
+<h1 id="注册url"><a href="#注册url" class="headerlink" title="注册url"></a>注册url</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">addMapping</span><span class="params">(router, mapping)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (var url in mapping) &#123;</span><br><span class="line">        if (url.startsWith('GET ')) &#123;</span><br><span class="line">            var path = url.substring(<span class="number">4</span>);</span><br><span class="line">            router.get(path, mapping[url]);</span><br><span class="line">            console.<span class="built_in">log</span>(`<span class="keyword">register</span> URL mapping: GET $&#123;path&#125;`);</span><br><span class="line">        &#125; else if (url.startsWith('POST ')) &#123;</span><br><span class="line">            var path = url.substring(<span class="number">5</span>);</span><br><span class="line">            router.post(path, mapping[url]);</span><br><span class="line">            console.<span class="built_in">log</span>(`<span class="keyword">register</span> URL mapping: POST $&#123;path&#125;`);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            console.<span class="built_in">log</span>(`invalid URL: $&#123;url&#125;`);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">function <span class="title">addControllers</span><span class="params">(router)</span> </span>&#123;</span><br><span class="line">    var files = fs.readdirSync(__dirname + '/controllers');</span><br><span class="line">    var js_files = files.filter((f) =&gt; &#123;</span><br><span class="line">        return f.endsWith('.js');</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (var f of js_files) &#123;</span><br><span class="line">        console.<span class="built_in">log</span>(`process controller: $&#123;f&#125;...`);</span><br><span class="line">        let mapping = require(__dirname + '/controllers/' + f);</span><br><span class="line">        addMapping(router, mapping);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">addControllers(router);</span><br></pre></td></tr></table></figure>
+<p>上面已经做了代码简化。</p>
+<h1 id="全栈目录结构"><a href="#全栈目录结构" class="headerlink" title="全栈目录结构"></a>全栈目录结构</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">view-koa/</span><br><span class="line">|</span><br><span class="line">+- .vscode/</span><br><span class="line">|  |</span><br><span class="line">|  +- launch.json &lt;-- VSCode 配置文件</span><br><span class="line">|</span><br><span class="line">+- controllers/ &lt;-- Controller</span><br><span class="line">|</span><br><span class="line">+- views/ &lt;-- html模板文件</span><br><span class="line">|</span><br><span class="line">+- <span class="keyword">static</span>/ &lt;-- 静态资源文件</span><br><span class="line">|</span><br><span class="line">+- controller.js &lt;-- 扫描注册Controller</span><br><span class="line">|</span><br><span class="line">+- app.js &lt;-- 使用koa的js</span><br><span class="line">|</span><br><span class="line">+- package.json &lt;-- 项目描述文件</span><br><span class="line">|</span><br><span class="line">+- node_modules/ &lt;-- npm安装的所有依赖包</span><br></pre></td></tr></table></figure>
+<p>再弄个页面文件就好啦。</p>
+<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>调用ctx.render(view, model)完成页面输出。<br>如何才能做真实的登录访问呢。首先，登录后返回cookie给前端页面。<br>往后每次调用一个后端参数，都需要带上cookie做登录访问。</p>
+<h1 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">view-koa/</span><br><span class="line">|</span><br><span class="line">+- <span class="keyword">static</span>/</span><br><span class="line">   |</span><br><span class="line">   +- css/ &lt;- 存放bootstrap.css等</span><br><span class="line">   |</span><br><span class="line">   +- fonts/ &lt;- 存放字体文件</span><br><span class="line">   |</span><br><span class="line">   +- js/ &lt;- 存放bootstrap.js等</span><br></pre></td></tr></table></figure>
+<h1 id="查找范围文件的中间件-并返回body中"><a href="#查找范围文件的中间件-并返回body中" class="headerlink" title="查找范围文件的中间件.并返回body中"></a>查找范围文件的中间件.并返回body中</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const path = require('path');</span><br><span class="line">const mime = require('mime');</span><br><span class="line">const fs = require('mz/fs');</span><br><span class="line"><span class="comment">// url: 类似 '/static/'</span></span><br><span class="line"><span class="comment">// dir: 类似 __dirname + '/static'</span></span><br><span class="line"><span class="function">function <span class="title">staticFiles</span><span class="params">(url, dir)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> async (ctx, next) =&gt; &#123;</span><br><span class="line">        let rpath = ctx.request.path;</span><br><span class="line">        <span class="comment">// 判断是否以指定的url开头:</span></span><br><span class="line">        <span class="keyword">if</span> (rpath.startsWith(url)) &#123;</span><br><span class="line">            <span class="comment">// 获取文件完整路径:</span></span><br><span class="line">            let fp = path.join(dir, rpath.substring(url.length));</span><br><span class="line">            <span class="comment">// 判断文件是否存在:</span></span><br><span class="line">            <span class="keyword">if</span> (await fs.exists(fp)) &#123;</span><br><span class="line">                <span class="comment">// 查找文件的mime:</span></span><br><span class="line">                ctx.response.type = mime.lookup(rpath);</span><br><span class="line">                <span class="comment">// 读取文件内容并赋值给response.body:</span></span><br><span class="line">                ctx.response.body = await fs.readFile(fp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 文件不存在:</span></span><br><span class="line">                ctx.response.status = <span class="number">404</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 不是指定前缀的URL，继续处理下一个middleware:</span></span><br><span class="line">            await next();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span>.exports = staticFiles;</span><br></pre></td></tr></table></figure>
+<h1 id="集成Nunjucks"><a href="#集成Nunjucks" class="headerlink" title="集成Nunjucks"></a>集成Nunjucks</h1><p>集成Nunjucks实际上也是编写一个middleware，这个middleware的作用是给ctx对象绑定一个render(view, model)的方法，这样，后面的Controller就可以调用这个方法来渲染模板了。<br>我们创建一个templating.js来实现这个middleware：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">const nunjucks = require('nunjucks');</span><br><span class="line"><span class="function">function <span class="title">createEnv</span><span class="params">(path, opts)</span> </span>&#123;</span><br><span class="line">    var</span><br><span class="line">        autoescape = opts.autoescape === undefined ? <span class="literal">true</span> : opts.autoescape,</span><br><span class="line">        noCache = opts.noCache || <span class="literal">false</span>,</span><br><span class="line">        watch = opts.watch || <span class="literal">false</span>,</span><br><span class="line">        throwOnUndefined = opts.throwOnUndefined || <span class="literal">false</span>,</span><br><span class="line">        env = <span class="keyword">new</span> nunjucks.Environment(</span><br><span class="line">            new nunjucks.FileSystemLoader(path || 'views', &#123;</span><br><span class="line">                noCache: noCache,</span><br><span class="line">                watch: watch,</span><br><span class="line">            &#125;), &#123;</span><br><span class="line">                autoescape: autoescape,</span><br><span class="line">                throwOnUndefined: throwOnUndefined</span><br><span class="line">            &#125;);</span><br><span class="line">    <span class="keyword">if</span> (opts.filters) &#123;</span><br><span class="line">        <span class="keyword">for</span> (var f in opts.filters) &#123;</span><br><span class="line">            env.addFilter(f, opts.filters[f]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> env;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">function <span class="title">templating</span><span class="params">(path, opts)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建Nunjucks的env对象:</span></span><br><span class="line">    var env = createEnv(path, opts);</span><br><span class="line">    <span class="keyword">return</span> async (ctx, next) =&gt; &#123;</span><br><span class="line">        <span class="comment">// 给ctx绑定render函数:</span></span><br><span class="line">        ctx.render = function (view, model) &#123;</span><br><span class="line">            <span class="comment">// 把render后的内容赋值给response.body:</span></span><br><span class="line">            ctx.response.body = env.render(view, Object.assign(&#123;&#125;, ctx.state || &#123;&#125;, model || &#123;&#125;));</span><br><span class="line">            <span class="comment">// 设置Content-Type:</span></span><br><span class="line">            ctx.response.type = 'text/html';</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 继续处理请求:</span></span><br><span class="line">        <span class="function">await <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">module</span>.exports = templating;</span><br></pre></td></tr></table></figure></p>
+<h1 id="app-js-处理过的中间件。加载过程如下"><a href="#app-js-处理过的中间件。加载过程如下" class="headerlink" title="app.js 处理过的中间件。加载过程如下"></a>app.js 处理过的中间件。加载过程如下</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">第一个middleware是记录URL以及页面执行时间：</span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(`Process $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;...`);</span><br><span class="line">    var</span><br><span class="line">        start = <span class="keyword">new</span> Date().getTime(),</span><br><span class="line">        execTime;</span><br><span class="line">    await next();</span><br><span class="line">    execTime = <span class="keyword">new</span> Date().getTime() - start;</span><br><span class="line">    ctx.response.set('X-Response-Time', `$&#123;execTime&#125;ms`);</span><br><span class="line">&#125;);</span><br><span class="line">第二个middleware处理静态文件：</span><br><span class="line"><span class="keyword">if</span> (! isProduction) &#123;</span><br><span class="line">    let staticFiles = require('./static-files');</span><br><span class="line">    app.use(staticFiles('/static/', __dirname + '/static'));</span><br><span class="line">&#125;</span><br><span class="line">第三个middleware解析POST请求：</span><br><span class="line">app.use(bodyParser());</span><br><span class="line">第四个middleware负责给ctx加上render()来使用Nunjucks：</span><br><span class="line">app.use(templating('view', &#123;</span><br><span class="line">    noCache: !isProduction,</span><br><span class="line">    watch: !isProduction</span><br><span class="line">&#125;));</span><br><span class="line">最后一个middleware处理URL路由：</span><br><span class="line">app.use(controller());</span><br></pre></td></tr></table></figure>
+<p>文章出处：<br><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501579966ab03decb0dd246e1a6799dd653a15e1b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501579966ab03decb0dd246e1a6799dd653a15e1b000</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinpay.jpg" alt="邱伟豪 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="邱伟豪 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/note-forwork/" rel="next" title="note for work">
+                <i class="fa fa-chevron-left"></i> note for work
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODg0Ny8xNTM3NQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">邱伟豪</p>
+              <p class="site-description motion-element" itemprop="description">后端 前端 运维 js java ngnix 区块链</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#入门：基本的koa使用"><span class="nav-number">1.</span> <span class="nav-text">入门：基本的koa使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理URL"><span class="nav-number">2.</span> <span class="nav-text">处理URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入koa-router"><span class="nav-number">3.</span> <span class="nav-text">引入koa-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册url"><span class="nav-number">4.</span> <span class="nav-text">注册url</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全栈目录结构"><span class="nav-number">5.</span> <span class="nav-text">全栈目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC"><span class="nav-number">6.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bootstrap"><span class="nav-number">7.</span> <span class="nav-text">bootstrap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找范围文件的中间件-并返回body中"><span class="nav-number">8.</span> <span class="nav-text">查找范围文件的中间件.并返回body中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成Nunjucks"><span class="nav-number">9.</span> <span class="nav-text">集成Nunjucks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#app-js-处理过的中间件。加载过程如下"><span class="nav-number">10.</span> <span class="nav-text">app.js 处理过的中间件。加载过程如下</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+ <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+  <span class="author" itemprop="copyrightHolder">邱伟豪</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
